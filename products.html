@@ -22,6 +22,7 @@
   --accent-purple: #8b5cf6;
   --accent-amber: #f59e0b;
   --accent-rose: #f43f5e;
+  --accent-tacflight: #4ade80;
   --text-primary: #e8e8ec;
   --text-secondary: #8a8a96;
   --text-muted: #55555f;
@@ -512,6 +513,29 @@ nav.scrolled {
 .product-card[data-color="rose"] .product-tag { border-color: rgba(244, 63, 94, 0.3); color: var(--accent-rose); }
 
 /* Product info */
+.product-card[data-color="tacflight"] .corner-tl,
+.product-card[data-color="tacflight"] .corner-tr,
+.product-card[data-color="tacflight"] .corner-bl,
+.product-card[data-color="tacflight"] .corner-br { color: var(--accent-tacflight); border-color: var(--accent-tacflight); }
+.product-card[data-color="tacflight"] .product-visual-name { color: var(--accent-tacflight); }
+.product-card[data-color="tacflight"] .pv-status { color: var(--accent-tacflight); }
+.product-card[data-color="tacflight"] .pv-status-dot { background: var(--accent-tacflight); box-shadow: 0 0 6px var(--accent-tacflight); }
+.product-card[data-color="tacflight"] .pv-ring,
+.product-card[data-color="tacflight"] .pv-ring-2 { border-color: var(--accent-tacflight); }
+.product-card[data-color="tacflight"] .product-tag { border-color: rgba(74, 222, 128, 0.3); color: var(--accent-tacflight); }
+.product-visual.pv-cover { display: block; height: auto; aspect-ratio: 1640 / 924; border-color: rgba(74, 222, 128, 0.25); transition: border-color 0.3s ease; }
+.product-visual.pv-cover:hover { border-color: rgba(74, 222, 128, 0.6); }
+.pv-cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.product-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.product-link {
+  font-family: var(--font-condensed); font-weight: 600; font-size: 0.85rem;
+  text-transform: uppercase; letter-spacing: 2px; text-decoration: none;
+  padding: 0.65rem 1.4rem; border: 1px solid rgba(74, 222, 128, 0.45);
+  color: var(--accent-tacflight); transition: all 0.3s ease;
+}
+.product-link.primary { background: var(--accent-tacflight); border-color: var(--accent-tacflight); color: var(--bg-primary); }
+.product-link:hover { box-shadow: 0 0 24px rgba(74, 222, 128, 0.35); transform: translateY(-2px); }
+
 .product-info h2 {
   font-family: var(--font-display);
   font-weight: 700;
@@ -866,6 +890,35 @@ footer {
 <!-- PRODUCTS -->
 <div class="products-section">
 
+  <!-- TACFLIGHT (first: the only product in public beta) -->
+  <div class="product-card reveal" data-color="tacflight" id="tacflight">
+    <a class="product-visual pv-cover" href="/tacflight/" aria-label="TacFlight: logbook and currency tracker for Army aviators">
+      <img src="/tacflight/assets/fb-cover.jpg" alt="TacFlight public beta: logbook and currency tracker for Army aviators, shown on two iPhones" width="1280" height="721" loading="lazy">
+    </a>
+    <div class="product-info">
+      <h2>TacFlight</h2>
+      <div class="product-subtitle">Logbook and Currency Tracker for Army Aviators</div>
+      <p class="product-desc">
+        A logbook built by Army aviators to replace paper flight time tracking. Log a flight in seconds, see every currency and minimum at a glance, and keep your records on all your devices, even with no signal. Now in public beta on iPhone and iPad.
+      </p>
+      <div class="product-features">
+        <div class="product-feature"><span class="product-feature-dot" style="background: var(--accent-tacflight);"></span> Quick Log and a flight timer for Day, Night and NVG time</div>
+        <div class="product-feature"><span class="product-feature-dot" style="background: var(--accent-tacflight);"></span> Automatic currency, semiannual minimums and task tracking</div>
+        <div class="product-feature"><span class="product-feature-dot" style="background: var(--accent-tacflight);"></span> Hours by aircraft, condition and duty position, with reports</div>
+        <div class="product-feature"><span class="product-feature-dot" style="background: var(--accent-tacflight);"></span> Encrypted on your phone, works offline, syncs across devices</div>
+      </div>
+      <div class="product-tags">
+        <span class="product-tag">iOS</span>
+        <span class="product-tag">Beta</span>
+        <span class="product-tag">Records</span>
+      </div>
+      <div class="product-links">
+        <a class="product-link primary" href="/tacflight/">Learn more</a>
+        <a class="product-link" href="https://testflight.apple.com/join/m35PFG5f" rel="noopener">Join the beta</a>
+      </div>
+    </div>
+  </div>
+
   <!-- 1. DEBRIEF RECORDER -->
   <div class="product-card reveal" data-color="green">
     <div class="product-visual">
@@ -1043,50 +1096,6 @@ footer {
         <span class="product-tag">AI</span>
         <span class="product-tag">Government</span>
         <span class="product-tag">Analytics</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- 6. DIGITAL LOGBOOK -->
-  <div class="product-card reveal" data-color="rose">
-    <div class="product-visual">
-      <div class="corner-tl"></div>
-      <div class="corner-tr"></div>
-      <div class="corner-bl"></div>
-      <div class="corner-br"></div>
-      <div class="pv-status"><span class="pv-status-dot"></span> Early Development</div>
-      <div class="pv-ring"></div>
-      <div class="pv-ring-2"></div>
-      <div class="product-visual-inner">
-        <div class="product-visual-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="8" y="6" width="32" height="36" rx="2"/>
-            <path d="M14 6v36"/>
-            <path d="M20 16h14M20 22h14M20 28h10"/>
-            <path d="M20 34h6"/>
-          </svg>
-        </div>
-        <div class="product-visual-name">Digital Logbook</div>
-        <div class="product-visual-tagline">Army Aviation Records</div>
-      </div>
-      <div class="pv-platform">Web / Mobile</div>
-    </div>
-    <div class="product-info">
-      <h2>Digital Logbook</h2>
-      <div class="product-subtitle">Army Aviation Flight Time Tracking</div>
-      <p class="product-desc">
-        A digital logbook custom-built for Army Aviation to replace paper-based flight time tracking. Log flights, track cumulative hours by aircraft type, and maintain pilot currency — all from a modern interface designed around how aviators actually work.
-      </p>
-      <div class="product-features">
-        <div class="product-feature"><span class="product-feature-dot" style="background: var(--accent-rose);"></span> Digital flight log with auto-calculated cumulative hours</div>
-        <div class="product-feature"><span class="product-feature-dot" style="background: var(--accent-rose);"></span> Automatic pilot currency and recency tracking</div>
-        <div class="product-feature"><span class="product-feature-dot" style="background: var(--accent-rose);"></span> Track hours by aircraft type, mission, and duty position</div>
-        <div class="product-feature"><span class="product-feature-dot" style="background: var(--accent-rose);"></span> Accessible from any device — browser-based, no installation required</div>
-      </div>
-      <div class="product-tags">
-        <span class="product-tag">Web</span>
-        <span class="product-tag">Mobile</span>
-        <span class="product-tag">Records</span>
       </div>
     </div>
   </div>
